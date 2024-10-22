@@ -1,0 +1,27 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  environment:
+    COMPOSER_MEMORY_LIMIT: '-1'
+
+  vars_files:
+    - test-vars.yml
+
+  pre_tasks:
+    - import_tasks: test-setup.yml
+
+  roles:
+    - name: nholuong.repo-remi
+      when: ansible_os_family == 'RedHat'
+    - role: nholuong.repo-dotdeb
+      when: ansible_distribution == 'Debian'
+    - role: nholuong.apache
+    - role: nholuong.mysql
+    - role: nholuong.php-versions
+    - role: nholuong.php
+    - role: nholuong.php-mysql
+    - role: nholuong.git
+    - role: nholuong.composer
+    - role: nholuong.drupal

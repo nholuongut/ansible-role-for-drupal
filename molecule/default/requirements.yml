@@ -1,0 +1,15 @@
+---
+- src: nholuong.repo-remi
+- src: nholuong.repo-dotdeb
+- src: nholuong.apache
+- src: nholuong.apache-php-fpm
+- src: nholuong.nginx
+- src: nholuong.mysql
+- src: nholuong.postgresql
+- src: nholuong.php-versions
+- src: nholuong.php
+- src: nholuong.php-mysql
+- src: nholuong.php-pgsql
+- src: nholuong.git
+- src: nholuong.composer
+- src: nholuong.drush
